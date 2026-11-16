@@ -1,0 +1,16 @@
+# Tested versions (Windows 11, Python 3.12, CPU only, November 2026).
+# Install PyTorch first. Without an NVIDIA card, use the CPU build:
+#   pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+# Then:
+#   pip install -r requirements.txt
+#
+# Versions are pinned on purpose. Windows Smart App Control can block newly
+# released library files until they build a reputation; these versions load.
+numpy==2.5.4
+transformers==5.23.0
+tokenizers==0.23.3
+peft==0.21.3
+accelerate==1.15.0
+safetensors==0.8.0
+huggingface_hub==2.4.0
+emoji==2.16.0
