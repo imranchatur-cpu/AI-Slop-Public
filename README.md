@@ -1,5 +1,7 @@
 # Stop AI Slop
 
+![Stop the AI Slop](images/stop-ai-slop-cover.png)
+
 Score your own writing for how much it reads as AI, on your own PC, and get edit suggestions in Claude Code.
 
 This kit runs **EditLens**, a research model from Pangram Labs (ICLR 2026), on an ordinary processor. No graphics card needed. It gives each section of a draft a score from 0 to 1:
@@ -13,6 +15,10 @@ This kit runs **EditLens**, a research model from Pangram Labs (ICLR 2026), on a
 
 The bands are an approximate split of the score, not Pangram's published thresholds.
 
+What it looks like on two real articles, one bar per ~300-word section:
+
+![EditLens section scores for two Lift Off articles](images/my-scores.png)
+
 Written up in Lift Off: "Stop the AI Slop" on [liftoffai.substack.com](https://liftoffai.substack.com)
 
 ## What is in here
@@ -23,12 +29,15 @@ Written up in Lift Off: "Stop the AI Slop" on [liftoffai.substack.com](https://l
 | `skill/editlens/SKILL.md` | A Claude Code skill: paste a draft, say "check this for AI", get scores, suggestions and a saved report |
 | `setup.ps1` | Windows installer: Python environment, libraries and the skill |
 | `requirements.txt` | Python libraries, for installing by hand |
+| `images/` | The graphics from the article |
 
 ## Free research model or Pangram's paid product?
 
 This kit uses the **free research release**: the smallest model Pangram published, downloaded from Hugging Face and run on your machine. Your text never leaves your PC, and there is no limit on checks. It is for non-commercial use only.
 
 **Pangram's paid product** at pangram.com runs a larger, newer production model and needs no setup. Use it if you need commercial use, higher accuracy, an API, or don't want to install anything. Its free plan allows a limited number of checks a day. Your text goes to their servers.
+
+![Free research model vs Pangram's paid product](images/free-vs-paid.png)
 
 ## What you need
 
@@ -108,6 +117,8 @@ A run takes 15 to 30 seconds on a normal PC, most of it loading the model. When 
 
 ## How the Claude skill works
 
+![How the skill works](images/how-it-works.png)
+
 1. Saves your draft (or uses your file where it is).
 2. Scores it section by section.
 3. Flags sections at 0.5 or higher and gives 2 to 4 suggestions for each:
@@ -129,6 +140,8 @@ It never rewrites whole paragraphs. Text Claude writes is AI text, so a rewrite 
 ## Ideas for other ways to run it
 
 Not included in this kit:
+
+![Six ways to run it](images/six-ways.png)
 
 - **A local MCP server** that keeps the model loaded, so checks take seconds and work in the Claude desktop app as well as Claude Code.
 - **A drop folder** watched by a small script, which writes a report next to any draft you save into it.
